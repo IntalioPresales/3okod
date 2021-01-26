@@ -1,0 +1,1386 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/libs/css/style.css">
+    <link rel="stylesheet" href="assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="assets/vendor/vector-map/jqvmap.css">
+    <link href="assets/vendor/jvectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" type="text/css" href="assets/vendor/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/dataTables.bootstrap4.min.css" />
+    <link rel="stylesheet" type="text/css" href="assets/vendor/datatables/css/dataTables.jqueryui.min.css" />
+    <link rel="stylesheet" href="assets/assets/fonts.css" />
+    <title>Tender Management</title>
+    <style>
+        .ct-area {
+            stroke: none;
+            fill-opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- main wrapper -->
+    <!-- ============================================================== -->
+    <div class="dashboard-main-wrapper">
+        <!-- ============================================================== -->
+        <!-- navbar -->
+        <!-- ============================================================== -->
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand legendRed" style="margin-left:5px" href="index.html">
+                    <img src="assets/images/intalio.png" style="max-height:30px;float:left" />
+                </a>
+                <a class="navbar-brand text-left" style="width:100%;color: #45c2b6!important;" href="index.html">Dashboard</a>
+
+                <div class="collapse navbar-collapse " id="navbarSupportedContent" style="display:none !important;">
+                    <ul class="navbar-nav ml-auto navbar-right-top">
+                        <li class="nav-item">
+                            <div id="custom-search" class="top-search-bar">
+                                <input class="form-control" type="text" placeholder="Search..">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown notification">
+                            <a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i> <span class="indicator"></span></a>
+                            <ul class="dropdown-menu dropdown-menu-right notification-dropdown">
+                                <li>
+                                    <div class="notification-title"> Notification</div>
+                                    <div class="notification-list">
+                                        <div class="list-group">
+                                            <a href="#" class="list-group-item list-group-item-action active">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-2.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Jeremy Rakestraw</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-3.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">John Abraham </span>is now following you
+                                                        <div class="notification-date">2 days ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-4.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Monaan Pechi</span> is watching your main repository
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <a href="#" class="list-group-item list-group-item-action">
+                                                <div class="notification-info">
+                                                    <div class="notification-list-user-img"><img src="assets/images/avatar-5.jpg" alt="" class="user-avatar-md rounded-circle"></div>
+                                                    <div class="notification-list-user-block">
+                                                        <span class="notification-list-user-name">Jessica Caruso</span>accepted your invitation to join the team.
+                                                        <div class="notification-date">2 min ago</div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="list-footer"> <a href="#">View all notifications</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown connection">
+                            <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-fw fa-th"></i> </a>
+                            <ul class="dropdown-menu dropdown-menu-right connection-dropdown">
+                                <li class="connection-list">
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/github.png" alt=""> <span>Github</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/dribbble.png" alt=""> <span>Dribbble</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/dropbox.png" alt=""> <span>Dropbox</span></a>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/bitbucket.png" alt=""> <span>Bitbucket</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/mail_chimp.png" alt=""><span>Mail chimp</span></a>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12 ">
+                                            <a href="#" class="connection-item"><img src="assets/images/slack.png" alt=""> <span>Slack</span></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="conntection-footer"><a href="#">More</a></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown nav-user">
+                            <a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"></a>
+                            <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
+                                <div class="nav-user-info">
+                                    <h5 class="mb-0 text-white nav-user-name">John Abraham </h5>
+                                    <span class="status"></span><span class="ml-2">Available</span>
+                                </div>
+                                <a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
+                                <a class="dropdown-item" href="#"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end navbar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- left sidebar -->
+        <!-- ============================================================== -->
+        <div class="nav-left-sidebar sidebar-dark" style="display:none;">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>Dashboard <span class="badge badge-success">6</span></a>
+                                <div id="submenu-1" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">E-Commerce</a>
+                                            <div id="submenu-1-2" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="index.html">E Commerce Dashboard</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product.html">Product List</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-single.html">Product Single</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="ecommerce-product-checkout.html">Product Checkout</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard-finance.html">Finance</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="dashboard-sales.html">Sales</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">Infulencer</a>
+                                            <div id="submenu-1-1" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="dashboard-influencer.html">Influencer</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="influencer-finder.html">Influencer Finder</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="influencer-profile.html">Influencer Profile</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-2" aria-controls="submenu-2"><i class="fa fa-fw fa-rocket"></i>UI Elements</a>
+                                <div id="submenu-2" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/cards.html">Cards <span class="badge badge-secondary">New</span></a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/general.html">General</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/carousel.html">Carousel</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/listgroup.html">List Group</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/typography.html">Typography</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/accordions.html">Accordions</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/tabs.html">Tabs</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Chart</a>
+                                <div id="submenu-3" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-c3.html">C3 Charts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-chartist.html">Chartist Charts</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-charts.html">Chart</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-morris.html">Morris</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-sparkline.html">Sparkline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/chart-gauge.html">Guage</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-4" aria-controls="submenu-4"><i class="fab fa-fw fa-wpforms"></i>Forms</a>
+                                <div id="submenu-4" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/form-elements.html">Form Elements</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/form-validation.html">Parsely Validations</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/multiselect.html">Multiselect</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/datepicker.html">Date Picker</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/bootstrap-select.html">Bootstrap Select</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Tables</a>
+                                <div id="submenu-5" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/general-table.html">General Tables</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/data-tables.html">Data Tables</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-divider">
+                                Features
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i> Pages </a>
+                                <div id="submenu-6" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/blank-page.html">Blank Page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/blank-page-header.html">Blank Page Header</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/login.html">Login</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/404-page.html">404 page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/sign-up.html">Sign up Page</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/forgot-password.html">Forgot Password</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/pricing.html">Pricing Tables</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/timeline.html">Timeline</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/calendar.html">Calendar</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/sortable-nestable-lists.html">Sortable/Nestable List</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/widgets.html">Widgets</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/media-object.html">Media Objects</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/cropper-image.html">Cropper</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/color-picker.html">Color Picker</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Apps <span class="badge badge-secondary">New</span></a>
+                                <div id="submenu-7" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/inbox.html">Inbox</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/email-details.html">Email Detail</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/email-compose.html">Email Compose</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/message-chat.html">Message Chat</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Icons</a>
+                                <div id="submenu-8" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-fontawesome.html">FontAwesome Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-material.html">Material Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-simple-lineicon.html">Simpleline Icon</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-themify.html">Themify Icon</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-flag.html">Flag Icons</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/icon-weather.html">Weather Icon</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
+                                <div id="submenu-9" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/map-google.html">Google Maps</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="pages/map-vector.html">Vector Maps</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Menu Level</a>
+                                <div id="submenu-10" class="collapse submenu" style="">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Level 1</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Level 2</a>
+                                            <div id="submenu-11" class="collapse submenu" style="">
+                                                <ul class="nav flex-column">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Level 1</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Level 2</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Level 3</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- end left sidebar -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- wrapper  -->
+        <!-- ============================================================== -->
+        <div class="dashboard-wrapper" style="margin-left:0px">
+            <div class="dashboard-finance">
+                <div class="container-fluid dashboard-content">
+                    <!-- ============================================================== -->
+                    <!-- pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row" style="display:none">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="page-header">
+                                <h3 class="mb-2">Finance Dashboard </h3>
+                                <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                                <div class="page-breadcrumb">
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
+                                            <li class="breadcrumb-item active" aria-current="page">Finance Dashboard Template</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end pageheader  -->
+                    <!-- ============================================================== -->
+                    <div class="row" style="display:none">
+                        <div class="offset-xl-10 col-xl-2 col-lg-2 col-md-6 col-sm-12 col-12">
+                            <form>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="daterange" value="01/01/2018 - 01/15/2018" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div id="rfpSpendingBlock" class="card tenderCategory" onclick="tenderCategoryOnClick('rfp');">
+                                <h5 class="card-header">Tenders</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1" id="RFP_Spending">--</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-left legendGold font-weight-bold">
+                                        <span class="icon-circle-small icon-box-xs legendGold"><i class="fa fa-fw fa-arrow-up"></i></span><span id="rfpSpendingPercentage" class="ml-1">--</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-rfp"></div>
+                                </div>
+                                <!--<div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>-->
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card tenderCategory" onclick="tenderCategoryOnClick('auction');">
+                                <h5 class="card-header">Bids</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1" id="Auction_Spending">--</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-left legendRed font-weight-bold">
+                                        <span class="icon-circle-small icon-box-xs legendRed"><i class="fa fa-fw fa-arrow-up"></i></span><span id="auctionSpendingPercentage" class="ml-1">--</span>
+                                    </div>
+                                </div>
+                                <div class="card-body text-center bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-auction"></div>
+                                </div>
+                                <!--<div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card tenderCategory" onclick="tenderCategoryOnClick('rfq');">
+                                <h5 class="card-header">Quotes</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1" id="RFQ_Spending">--</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-left legendGold font-weight-bold">
+                                        <span class="icon-circle-small icon-box-xs legendGold"><i class="fa fa-fw fa-arrow-up"></i></span> <span id="rfqSpendingPercentage" class="ml-1">--</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-b-40 p-t-40">
+                                    <div id="sparkline-rfq"></div>
+                                </div>
+                                <!--<div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>-->
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card tenderCategory" style="cursor:default" onclick="tenderCategoryOnClick('rfi');">
+                                <h5 class="card-header">Request for information</h5>
+                                <div class="card-body">
+                                    <div class="metric-value d-inline-block">
+                                        <h1 class="mb-1" id="RFI_Spending">--</h1>
+                                    </div>
+                                    <div class="metric-label d-inline-block float-left legendGoldDark font-weight-bold">
+                                        <span class="icon-circle-small icon-box-xs legendGoldDark"><i class="fa fa-fw fa-arrow-up"></i></span><span id="rfiSpendingPercentage" class="ml-1">--</span>
+                                    </div>
+                                </div>
+                                <div class="card-body bg-light p-t-40 p-b-40">
+                                    <div id="sparkline-rfi"></div>
+                                </div>
+                                <!--<div class="card-footer text-center bg-white">
+                                    <a href="#" class="card-link">View Details</a>
+                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ============================================================== -->
+                    <!-- end revenue year  -->
+                    <!-- ============================================================== -->
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- inventory turnover  -->
+                        <!-- ============================================================== -->
+                        <div id="tendersTurnover" class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" style="display:none">
+                            <div class="card">
+                                <h5 id="tenderTurnoverTitle" class="card-header">--</h5>
+                                <div class="card-body minHeight">
+                                    <div class="ct-chart-inventory ct-golden-section"></div>
+                                    <div class="text-center m-t-10">
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs  mr-1 legend-tile" style="color: #26879b;"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Target</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendGold mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Accomplished</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs  mr-1 legend-tile" style="color:#45c2b6;"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Accomplished (with discount)</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ap and ar balance  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card" style="height: calc(100% - 30px);">
+                                <h5 class="card-header">
+                                    Analysis of contract types
+                                </h5>
+                                <div class="card-body minHeight">
+                                    <canvas id="chartjs_balance_bar"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end ap and ar balance  -->
+                        <!-- ============================================================== -->
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card" style="height: calc(100% - 30px);">
+                                <h5 class="card-header">The bidders</h5>
+                                <div class="card-body minHeight">
+                                    <canvas id="suppliersChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Total projects</h5>
+                                <div class="card-body minHeight">
+                                    <div class="ct-chart-line-invoice ct-golden-section"></div>
+                                    <div class="text-center m-t-10">
+                                        <!--<span class="legend-item mr-3">
+                                            <span class="fa-xs legendRed mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">RFI</span>
+                                        </span>-->
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs mr-1 legend-tile" style="color:#36a5a9!important;"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Tenders</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs  mr-1 legend-tile" style="color:#24b2d3!important;"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Bids</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs  mr-1 legend-tile" style="color:#46e1c3!important;"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Quotes</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--<div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Disputed vs Overdue Invoices</h5>
+                                <div class="card-body">
+                                    <div class="ct-chart-invoice ct-golden-section"></div>
+                                    <div class="text-center m-t-40">
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs text-primary mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Disputed Invoices</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full "></i></span><span class="legend-text">Overdue Invoices</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>-->
+
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card minHeight">
+                                <h5 class="card-header">Awarding by type </h5>
+                                <div class="card-body minHeight" style="min-height:487px">
+                                    <div class="ct-chart-line-awarded-contracts ct-golden-section"></div>
+                                    <div class="text-center m-t-10">
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendGold mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Software</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendYellow mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">hardware</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendRed  mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Maintenance work</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendGoldDark mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Other</span>
+                                        </span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-6 col-lg-12 col-md-12 col-sm-12 col-12" style="text-align:center">
+                            <div class="col-sm-12" style="display:inline-block;padding:0px">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-inline-block">
+                                            <h5 class="text-muted">Total bidders</h5>
+                                            <h2 id="totalSuppliers" class="mb-0">--</h2>
+                                        </div>
+                                        <div class="float-right icon-circle-medium  icon-box-lg  bg-primary-light mt-1" style="background-color: #36a5a9!important;">
+                                            <i class="fa fa-user fa-fw fa-sm text-primary" style="color: #fff!important;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12" style="display:inline-block;padding:0px">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-inline-block">
+                                            <h5 class="text-muted">Number of downloads </h5>
+                                            <h2 id="totalFRPDownloads" class="mb-0">--</h2>
+                                        </div>
+                                        <div class="float-right icon-circle-medium  icon-box-lg  bg-info-light mt-1" style="background-color: #36a5a9!important;">
+                                            <i class="fa fa-eye fa-fw fa-sm text-info" style="color: #fff!important;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12" style="display:inline-block;padding:0px">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-inline-block">
+                                            <h5 class="text-muted">Blacklist for bidders</h5>
+                                            <h2 id="totalBlackListSuppliers" class="mb-0">--</h2>
+                                        </div>
+                                        <div class="float-right icon-circle-medium  icon-box-lg  bg-primary-light mt-1" style="background-color: #36a5a9!important;">
+                                            <i class="fa fa-user fa-fw fa-sm text-primary" style="color: #fff!important;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-sm-12" style="display:inline-block;padding:0px">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-inline-block">
+                                            <h5 class="text-muted">Tenders certified</h5>
+                                            <h2 id="totalAwardedTenders" class="mb-0">--</h2>
+                                        </div>
+                                        <div class="float-right icon-circle-medium  icon-box-lg  bg-secondary-light mt-1">
+                                            <i class="fa fa-handshake fa-fw fa-sm text-secondary"  style="color: #fff!important;"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <!-- ============================================================== -->
+                        <!-- data table  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h5 class="mb-0">The bidders</h5>
+                                </div>
+                                <div class="card-body">
+
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#topSuppliersTab">Top bidders</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#topBlackListSuppliersTab">Blacklisted</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div id="topSuppliersTab" class="tab-pane active">
+                                            <div class="table-responsive">
+                                                <table id="suppliersGrid" class="table table-striped table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="userName">Name</th>
+                                                            <th class="applied">The recorder</th>
+                                                            <th>Granted</th>
+                                                            <th>Location</th>
+                                                            <th>date</th>
+                                                            <th>Total profits</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="userName">Everteam - Intalio</td>
+                                                            <td class="applied">50</td>
+                                                            <td>45</td>
+                                                            <td>Lebanon</td>
+                                                            <td>2016/08/12</td>
+                                                            <td>$.650,800</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Tiger Nixon</td>
+                                                            <td class="applied">15</td>
+                                                            <td>10</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2011/04/25</td>
+                                                            <td>$.320,800</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Garrett Winters</td>
+                                                            <td class="applied">12</td>
+                                                            <td>11</td>
+                                                            <td>Tokyo</td>
+                                                            <td>2011/07/25</td>
+                                                            <td>$.170,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Ashton Cox</td>
+                                                            <td class="applied">13</td>
+                                                            <td>9</td>
+                                                            <td>San Francisco</td>
+                                                            <td>2009/01/12</td>
+                                                            <td>$.86,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Cedric Kelly</td>
+                                                            <td class="applied">15</td>
+                                                            <td>12</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2012/03/29</td>
+                                                            <td>$.433,060</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Airi Satou</td>
+                                                            <td class="applied">15</td>
+                                                            <td>10</td>
+                                                            <td>Tokyo</td>
+                                                            <td>2008/11/28</td>
+                                                            <td>$.162,700</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Brielle Williamson</td>
+                                                            <td class="applied">20</td>
+                                                            <td>17</td>
+                                                            <td>New York</td>
+                                                            <td>2012/12/02</td>
+                                                            <td>$.372,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Herrod Chandler</td>
+                                                            <td class="applied">17</td>
+                                                            <td>11</td>
+                                                            <td>San Francisco</td>
+                                                            <td>2012/08/06</td>
+                                                            <td>$.137,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Rhona Davidson</td>
+                                                            <td class="applied">20</td>
+                                                            <td>15</td>
+                                                            <td>Tokyo</td>
+                                                            <td>2010/10/14</td>
+                                                            <td>$.327,900</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Colleen Hurst</td>
+                                                            <td class="applied">10</td>
+                                                            <td>8</td>
+                                                            <td>San Francisco</td>
+                                                            <td>2009/09/15</td>
+                                                            <td>$.205,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Sonya Frost</td>
+                                                            <td class="applied">15</td>
+                                                            <td>11</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2008/12/13</td>
+                                                            <td>$.103,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Jena Gaines</td>
+                                                            <td class="applied">7</td>
+                                                            <td>0</td>
+                                                            <td>London</td>
+                                                            <td>2008/12/19</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Quinn Flynn</td>
+                                                            <td class="applied">6</td>
+                                                            <td>0</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2013/03/03</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Charde Marshall</td>
+                                                            <td class="applied">2</td>
+                                                            <td>0</td>
+                                                            <td>San Francisco</td>
+                                                            <td>2008/10/16</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Haley Kennedy</td>
+                                                            <td class="applied">2</td>
+                                                            <td>2</td>
+                                                            <td>London</td>
+                                                            <td>2012/12/18</td>
+                                                            <td>$.313,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Tatyana Fitzpatrick</td>
+                                                            <td class="applied">5</td>
+                                                            <td>3</td>
+                                                            <td>London</td>
+                                                            <td>2010/03/17</td>
+                                                            <td>$.385,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Michael Silva</td>
+                                                            <td class="applied">2</td>
+                                                            <td>1</td>
+                                                            <td>London</td>
+                                                            <td>2012/11/27</td>
+                                                            <td>$.198,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Paul Byrd</td>
+                                                            <td class="applied">4</td>
+                                                            <td>3</td>
+                                                            <td>New York</td>
+                                                            <td>2010/06/09</td>
+                                                            <td>$.725,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Gloria Little</td>
+                                                            <td class="applied">1</td>
+                                                            <td>1</td>
+                                                            <td>New York</td>
+                                                            <td>2009/04/10</td>
+                                                            <td>$.237,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Shou Itou</td>
+                                                            <td class="applied">3</td>
+                                                            <td>2</td>
+                                                            <td>London</td>
+                                                            <td>2011/08/14</td>
+                                                            <td>$.163,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="userName">Michelle House</td>
+                                                            <td class="applied">2</td>
+                                                            <td>1</td>
+                                                            <td>Sydney</td>
+                                                            <td>2011/06/02</td>
+                                                            <td>$.95,400</td>
+                                                        </tr>
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>The recorder</th>
+                                                            <th>Granted</th>
+                                                            <th>Location</th>
+                                                            <th>date</th>
+                                                            <th>Total profits</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <div id="topBlackListSuppliersTab" class="tab-pane fade">
+                                            <div class="table-responsive">
+                                                <table id="blackListGrid" class="table table-striped table-bordered" style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>The recorder</th>
+                                                            <th>Granted</th>
+                                                            <th>Location</th>
+                                                            <th>date</th>
+                                                            <th>Total profits</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Bradley Greer</td>
+                                                            <td>5</td>
+                                                            <td>1</td>
+                                                            <td>London</td>
+                                                            <td>2012/10/13</td>
+                                                            <td>$.132,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Dai Rios</td>
+                                                            <td>18</td>
+                                                            <td>0</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2012/09/26</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jenette Caldwell</td>
+                                                            <td>20</td>
+                                                            <td>3</td>
+                                                            <td>New York</td>
+                                                            <td>2011/09/03</td>
+                                                            <td>$.345,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Yuri Berry</td>
+                                                            <td>10</td>
+                                                            <td>2</td>
+                                                            <td>New York</td>
+                                                            <td>2009/06/25</td>
+                                                            <td>$.175,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Caesar Vance</td>
+                                                            <td>5</td>
+                                                            <td>1</td>
+                                                            <td>New York</td>
+                                                            <td>2011/12/12</td>
+                                                            <td>$.60,450</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Doris Wilder</td>
+                                                            <td>5</td>
+                                                            <td>1</td>
+                                                            <td>Sydney</td>
+                                                            <td>2010/09/20</td>
+                                                            <td>$.5,600</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Angelica Ramos</td>
+                                                            <td>7</td>
+                                                            <td>0</td>
+                                                            <td>London</td>
+                                                            <td>2009/10/09</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gavin Joyce</td>
+                                                            <td>5</td>
+                                                            <td>0</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>2010/12/22</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jennifer Chang</td>
+                                                            <td>5</td>
+                                                            <td>0</td>
+                                                            <td>Singapore</td>
+                                                            <td>2010/11/14</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Brenden Wagner</td>
+                                                            <td>5</td>
+                                                            <td>0</td>
+                                                            <td>Singapore</td>
+                                                            <td>2011/06/07</td>
+                                                            <td>--</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Fiona Green</td>
+                                                            <td>4</td>
+                                                            <td>1</td>
+                                                            <td>Singapore</td>
+                                                            <td>2010/03/11</td>
+                                                            <td>$.5,000</td>
+                                                        </tr>
+                                                        <!--
+                                                        <tr>
+                                                            <td>Suki Burks</td>
+                                                            <td>Developer</td>
+                                                            <td>London</td>
+                                                            <td>53</td>
+                                                            <td>2009/10/22</td>
+                                                            <td>$.114,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Prescott Bartlett</td>
+                                                            <td>Technical Author</td>
+                                                            <td>London</td>
+                                                            <td>27</td>
+                                                            <td>2011/05/07</td>
+                                                            <td>$.145,000</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Gavin Cortez</td>
+                                                            <td>Team Leader</td>
+                                                            <td>San Francisco</td>
+                                                            <td>22</td>
+                                                            <td>2008/10/26</td>
+                                                            <td>$.235,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Martena Mccray</td>
+                                                            <td>Post-Sales support</td>
+                                                            <td>Edinburgh</td>
+                                                            <td>46</td>
+                                                            <td>2011/03/09</td>
+                                                            <td>$.324,050</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Unity Butler</td>
+                                                            <td>Marketing Designer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>47</td>
+                                                            <td>2009/12/09</td>
+                                                            <td>$.85,675</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Howard Hatfield</td>
+                                                            <td>Office Manager</td>
+                                                            <td>San Francisco</td>
+                                                            <td>51</td>
+                                                            <td>2008/12/16</td>
+                                                            <td>$.164,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Hope Fuentes</td>
+                                                            <td>Secretary</td>
+                                                            <td>San Francisco</td>
+                                                            <td>41</td>
+                                                            <td>2010/02/12</td>
+                                                            <td>$.109,850</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Vivian Harrell</td>
+                                                            <td>Financial Controller</td>
+                                                            <td>San Francisco</td>
+                                                            <td>62</td>
+                                                            <td>2009/02/14</td>
+                                                            <td>$.452,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Timothy Mooney</td>
+                                                            <td>Office Manager</td>
+                                                            <td>London</td>
+                                                            <td>37</td>
+                                                            <td>2008/12/11</td>
+                                                            <td>$.136,200</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Jackson Bradshaw</td>
+                                                            <td>Director</td>
+                                                            <td>New York</td>
+                                                            <td>65</td>
+                                                            <td>2008/09/26</td>
+                                                            <td>$.645,750</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Olivia Liang</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>Singapore</td>
+                                                            <td>64</td>
+                                                            <td>2011/02/03</td>
+                                                            <td>$.234,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Bruno Nash</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>London</td>
+                                                            <td>38</td>
+                                                            <td>2011/05/03</td>
+                                                            <td>$.163,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Sakura Yamamoto</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>Tokyo</td>
+                                                            <td>37</td>
+                                                            <td>2009/08/19</td>
+                                                            <td>$.139,575</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Thor Walton</td>
+                                                            <td>Developer</td>
+                                                            <td>New York</td>
+                                                            <td>61</td>
+                                                            <td>2013/08/11</td>
+                                                            <td>$.98,540</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Finn Camacho</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>San Francisco</td>
+                                                            <td>47</td>
+                                                            <td>2009/07/07</td>
+                                                            <td>$.87,500</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Serge Baldwin</td>
+                                                            <td>Data Coordinator</td>
+                                                            <td>Singapore</td>
+                                                            <td>64</td>
+                                                            <td>2012/04/09</td>
+                                                            <td>$.138,575</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Zenaida Frank</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>New York</td>
+                                                            <td>63</td>
+                                                            <td>2010/01/04</td>
+                                                            <td>$.125,250</td>
+                                                        </tr>-->
+                                                    </tbody>
+                                                    <tfoot>
+                                                        <tr>
+                                                            <th>Name</th>
+                                                            <th>The recorder</th>
+                                                            <th>Granted</th>
+                                                            <th>Location</th>
+                                                            <th>date</th>
+                                                            <th>Total profits</th>
+                                                        </tr>
+                                                    </tfoot>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="userDetailsRow" class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 id="txtTenderByUser" class="card-header">--<span class="float-right"></span></h5>
+                                <div class="card-body" style="min-height:420px;">
+                                    <canvas id="tenderByCategory" style="direction:rtl"></canvas>
+                                    <!--<div class="text-center m-t-10">
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendRed mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">RFI</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendGold mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">RFP</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendGoldDark mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">Auction</span>
+                                        </span>
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs legendYellow mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">RFQ</span>
+                                        </span>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card" style="height: calc(100% - 30px);">
+                                <h5 class="card-header">The percentage of the budget</h5>
+                                <div class="card-body" style="min-height:334px">
+                                    <div id="morris_gross" style="height: 272px;"></div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Budget <span class="float-left text-dark">12,000.00 $</span></p>
+                                    <p>
+                                        Balance<span class="float-left text-dark">-2300.00 <span class="ml-2 legendGoldDark"><i class="fas fa-caret-up mr-1"></i>25%</span></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card" style="height: calc(100% - 30px);">
+                                <h5 class="card-header">Profit Ratio</h5>
+                                <div class="card-body" style="min-height:334px">
+                                    <div id="morris_profit" style="height: 272px;"></div>
+                                </div>
+                                <div class="card-footer bg-white">
+                                    <p>Budget <span class="float-left text-dark">3500.00$</span></p>
+                                    <p>
+                                        Balance <span class="float-left text-dark">230.00 <span class="ml-2 legendGoldDark"><i class="fas fa-caret-up mr-1"></i>25%</span></span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="display:none;">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">EBIT (Earnings Before Interest & Tax)</h5>
+                                <div class="card-body">
+                                    <div id="ebit_morris"></div>
+                                    <div class="text-center">
+                                        <span class="legend-item mr-3">
+                                            <span class="fa-xs text-secondary mr-1 legend-tile"><i class="fa fa-fw fa-square-full"></i></span>
+                                            <span class="legend-text">EBIT (Earnings Before Interest & Tax)</span>
+                                        </span>
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end earnings before interest tax  -->
+                        <!-- ============================================================== -->
+                        <!-- ============================================================== -->
+                        <!-- cost of goods  -->
+                        <!-- ============================================================== -->
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="card">
+                                <h5 class="card-header">Cost of goods / Services <span class="float-right">1 Jan 2018 to 31 Dec 2018</span></h5>
+                                <div class="card-body">
+                                    <div id="goodservice"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ============================================================== -->
+                        <!-- end cost of goods  -->
+                        <!-- ============================================================== -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- ============================================================== -->
+        <!-- end wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- end main wrapper  -->
+    <!-- ============================================================== -->
+    <!-- jquery 3.3.1  -->
+    <script src="assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <!-- bootstap bundle js -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <!-- slimscroll js -->
+    <script src="assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <!-- chart chartist js -->
+    <script src="assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="assets/vendor/charts/chartist-bundle/Chartistjs.js"></script>
+    <script src="assets/vendor/charts/chartist-bundle/chartist-plugin-threshold.js"></script>
+    <!-- chart C3 js -->
+    <script src="assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <!-- chartjs js -->
+    <script src="assets/vendor/charts/charts-bundle/Chart.bundle.js"></script>
+    <script src="assets/vendor/charts/charts-bundle/chartjs.js"></script>
+    <!-- sparkline js -->
+    <script src="assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <!-- dashboard finance js -->
+    <script src="assets/libs/js/dashboard-finance.js"></script>
+    <!-- main js -->
+    <script src="assets/libs/js/main-js.js"></script>
+    <!-- gauge js -->
+    <script src="assets/vendor/gauge/gauge.min.js"></script>
+    <!-- morris js -->
+    <script src="assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="assets/vendor/charts/morris-bundle/morrisjs.html"></script>
+    <script src="assets/vendor/datatables/js/data-table.js"></script>
+    <script src="assets/vendor/datatables/js/dataTables.jqueryui.js"></script>
+    <script src="assets/vendor/datatables/js/dataTables.bootstrap4.js"></script>
+    <script src="assets/vendor/datatables/js/jquery.dataTables.js"></script>
+    <script src="assets/vendor/datatables/js/buttons.bootstrap4.min.js"></script>
+    <!-- daterangepicker js -->
+    <!--<script src="../../../../cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script src="../../../../cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>-->
+    <script>
+        $(function () {
+            //$('input[name="daterange"]').daterangepicker({
+            //    opens: 'left'
+            //}, function(start, end, label) {
+            //    console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+            //});
+        });
+    </script>
+</body>
+
+</html>
